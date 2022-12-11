@@ -22,6 +22,7 @@
 package com.shatteredpixel.shatteredpixeldungeon.sprites;
 
 import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
 import com.watabou.noosa.TextureFilm;
 
 public class ThiefSprite extends MobSprite {
@@ -29,7 +30,7 @@ public class ThiefSprite extends MobSprite {
 	public ThiefSprite() {
 		super();
 		
-		texture( Assets.Sprites.THIEF );
+		texture( SPDSettings.thiefFlush() ? Assets.Memesprites.THIEFFLUSH : Assets.Sprites.THIEF );
 		TextureFilm film = new TextureFilm( texture, 12, 13 );
 		
 		idle = new Animation( 1, true );

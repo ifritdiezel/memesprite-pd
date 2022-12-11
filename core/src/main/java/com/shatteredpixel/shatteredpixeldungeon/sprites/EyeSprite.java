@@ -22,6 +22,7 @@
 package com.shatteredpixel.shatteredpixeldungeon.sprites;
 
 import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
 import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
 import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
 import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Eye;
@@ -42,7 +43,7 @@ public class EyeSprite extends MobSprite {
 	public EyeSprite() {
 		super();
 		
-		texture( Assets.Sprites.EYE );
+		texture(SPDSettings.eyeDerp() ? Assets.Memesprites.EYEDERP : Assets.Sprites.EYE );
 		
 		TextureFilm frames = new TextureFilm( texture, 16, 18 );
 		

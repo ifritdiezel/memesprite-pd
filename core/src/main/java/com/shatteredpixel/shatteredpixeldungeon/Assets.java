@@ -297,4 +297,13 @@ public class Assets {
 		public static final String SPIRIT_HAWK= "sprites/spirit_hawk.png";
 		public static final String RED_SENTRY= "sprites/red_sentry.png";
 	}
+
+	public static class Memesprites{
+		public static final String PSEUDORAT = "memesprites/pseudorat.png";
+		public static final String SKELEFLIP = "memesprites/skeleflip.png";
+		public static final String THIEFFLUSH = "memesprites/thiefflush.png";
+		public static final String ELEMENTAL_POG = "memesprites/elementalpog.png";
+		public static final String BUFF_SHOPKEEPER = "memesprites/buff_shopkeeper.png";
+		public static final String EYEDERP = "memesprites/eyederp.png";
+	}
 }

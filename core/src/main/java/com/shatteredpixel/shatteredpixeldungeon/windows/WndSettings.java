@@ -68,6 +68,7 @@ public class WndSettings extends WndTabbed {
 	private DataTab     data;
 	private AudioTab    audio;
 	private LangsTab    langs;
+	private MemeTab 	memes;
 
 	public static int last_index = 0;
 
@@ -185,6 +186,20 @@ public class WndSettings extends WndTabbed {
 
 		};
 		add( langsTab );
+
+		memes = new MemeTab();
+		memes.setSize(width, 0);
+		height = Math.max(height, memes.height());
+		add( memes );
+
+		add( new IconTab(Icons.get(Icons.TALENT)){
+			@Override
+			protected void select(boolean value) {
+				super.select(value);
+				memes.visible = memes.active = value;
+				if (value) last_index = 0;
+			}
+		});
 
 		resize(width, (int)Math.ceil(height));
 
@@ -1239,6 +1254,106 @@ public class WndSettings extends WndTabbed {
 
 				height = txtTranifex.bottom();
 			}
+
+		}
+	}
+
+	private static class MemeTab extends Component{
+
+		RenderedTextBlock title;
+		ColorBlock sep1;
+
+		CheckBox pseudorat;
+		CheckBox skeleflip;
+		CheckBox thiefflush;
+		CheckBox elementalpog;
+		CheckBox buffshopkeeper;
+		CheckBox eyederp;
+
+
+		@Override
+		protected void createChildren() {
+			title = PixelScene.renderTextBlock("Memes", 9);
+			title.hardlight(TITLE_COLOR);
+			add(title);
+
+			sep1 = new ColorBlock(1, 1, 0xFF000000);
+			add(sep1);
+
+			pseudorat = new CheckBox("Pseudorat"){
+				@Override
+				protected void onClick() {
+					super.onClick();
+					SPDSettings.pseudoRat(checked());
+				}
+			};
+			pseudorat.checked(SPDSettings.pseudoRat());
+			add(pseudorat);
+
+			skeleflip = new CheckBox("Skeleflip"){
+				@Override
+				protected void onClick() {
+					super.onClick();
+					SPDSettings.skeleflip(checked());
+				}
+			};
+			skeleflip.checked(SPDSettings.skeleflip());
+			add(skeleflip);
+
+			thiefflush = new CheckBox("Thiefflush"){
+				@Override
+				protected void onClick() {
+					super.onClick();
+					SPDSettings.thiefFlush(checked());
+				}
+			};
+			thiefflush.checked(SPDSettings.thiefFlush());
+			add(thiefflush);
+
+			elementalpog = new CheckBox("Elementalpog"){
+				@Override
+				protected void onClick() {
+					super.onClick();
+					SPDSettings.elementalPog(checked());
+				}
+			};
+			elementalpog.checked(SPDSettings.elementalPog());
+			add(elementalpog);
+
+			buffshopkeeper = new CheckBox("Buffshopkeeper"){
+				@Override
+				protected void onClick() {
+					super.onClick();
+					SPDSettings.buffShopkeeper(checked());
+				}
+			};
+			buffshopkeeper.checked(SPDSettings.buffShopkeeper());
+			add(buffshopkeeper);
+
+			eyederp = new CheckBox("Eyederp"){
+				@Override
+				protected void onClick() {
+					super.onClick();
+					SPDSettings.eyeDerp(checked());
+				}
+			};
+			eyederp.checked(SPDSettings.eyeDerp());
+			add(eyederp);
+		}
+
+		@Override
+		protected void layout() {
+			title.setPos((width - title.width())/2, y + GAP);
+			sep1.size(width, 1);
+			sep1.y = title.bottom() + 3*GAP;
+
+			float pos;
+			pseudorat.setRect(0, sep1.y + 1 + GAP, width/2-1, BTN_HEIGHT);
+			skeleflip.setRect(pseudorat.right() + GAP, pseudorat.top(), width/2-1, BTN_HEIGHT);
+			thiefflush.setRect(0 , skeleflip.bottom() + GAP, width/2-1, BTN_HEIGHT);
+			elementalpog.setRect(thiefflush.right() + GAP, thiefflush.top(), width/2-1, BTN_HEIGHT);
+			buffshopkeeper.setRect(0, elementalpog.bottom() + GAP, width/2-1, BTN_HEIGHT);
+			eyederp.setRect(buffshopkeeper.right()+GAP, buffshopkeeper.top(), width/2-1, BTN_HEIGHT);
 
 		}
 	}

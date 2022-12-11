@@ -420,4 +420,34 @@ public class SPDSettings extends GameSettings {
 		return getBoolean( KEY_WINDOW_MAXIMIZED, false );
 	}
 
+
+	public static boolean pseudoRat() {return getBoolean("pseudo_rat", true);}
+	public static void pseudoRat(boolean value){
+		put("pseudo_rat", value);
+	}
+
+	public static boolean skeleflip() {return getBoolean("skeleflip", true);}
+	public static void skeleflip(boolean value){
+		put("skeleflip", value);
+	}
+
+	public static boolean thiefFlush() {return getBoolean("thief_flush", true);}
+	public static void thiefFlush(boolean value){ put("thief_flush", value);}
+
+	public static boolean elementalPog() {return getBoolean("elemental_pog", true);}
+	public static void elementalPog(boolean value){
+		put("elemental_pog", value);
+	}
+
+	public static boolean buffShopkeeper() {return getBoolean("buff_shopkeeper", true);}
+	public static void buffShopkeeper(boolean value){
+		put("buff_shopkeeper", value);
+	}
+
+	public static boolean eyeDerp() {return getBoolean("eye_derp", true);}
+	public static void eyeDerp(boolean value){
+		put("eye_derp", value);
+	}
+
+
 }

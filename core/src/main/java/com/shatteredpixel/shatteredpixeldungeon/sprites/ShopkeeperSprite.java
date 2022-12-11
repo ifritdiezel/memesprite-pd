@@ -22,6 +22,7 @@
 package com.shatteredpixel.shatteredpixeldungeon.sprites;
 
 import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
 import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.particles.PixelParticle;
 
@@ -32,7 +33,7 @@ public class ShopkeeperSprite extends MobSprite {
 	public ShopkeeperSprite() {
 		super();
 		
-		texture( Assets.Sprites.KEEPER );
+		texture(SPDSettings.buffShopkeeper() ? Assets.Memesprites.BUFF_SHOPKEEPER : Assets.Sprites.KEEPER );
 		TextureFilm film = new TextureFilm( texture, 14, 14 );
 		
 		idle = new Animation( 10, true );

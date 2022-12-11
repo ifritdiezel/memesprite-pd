@@ -22,6 +22,7 @@
 package com.shatteredpixel.shatteredpixeldungeon.sprites;
 
 import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
 import com.watabou.noosa.TextureFilm;
 
 public class RatSprite extends MobSprite {
@@ -29,7 +30,7 @@ public class RatSprite extends MobSprite {
 	public RatSprite() {
 		super();
 		
-		texture( Assets.Sprites.RAT );
+		texture(SPDSettings.pseudoRat() ? Assets.Memesprites.PSEUDORAT : Assets.Sprites.RAT );
 		
 		TextureFilm frames = new TextureFilm( texture, 16, 15 );
 		

@@ -22,6 +22,7 @@
 package com.shatteredpixel.shatteredpixeldungeon.sprites;
 
 import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
 import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
 import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Elemental;
 import com.shatteredpixel.shatteredpixeldungeon.effects.Beam;
@@ -50,7 +51,7 @@ public abstract class ElementalSprite extends MobSprite {
 		
 		int c = texOffset();
 		
-		texture( Assets.Sprites.ELEMENTAL );
+		texture(SPDSettings.elementalPog() ? Assets.Memesprites.ELEMENTAL_POG : Assets.Sprites.ELEMENTAL );
 		
 		TextureFilm frames = new TextureFilm( texture, 12, 14 );
 		

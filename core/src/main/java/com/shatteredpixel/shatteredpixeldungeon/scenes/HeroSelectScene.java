@@ -564,7 +564,6 @@ public class HeroSelectScene extends PixelScene {
 
 			buttons = new ArrayList<>();
 			spacers = new ArrayList<>();
-			if (DeviceCompat.isDebug() || Badges.isUnlocked(Badges.Badge.VICTORY)){
 				StyledButton seedButton = new StyledButton(Chrome.Type.BLANK, Messages.get(HeroSelectScene.class, "custom_seed"), 6){
 					@Override
 					protected void onClick() {
@@ -721,7 +720,7 @@ public class HeroSelectScene extends PixelScene {
 				challengeButton.icon(Icons.get(SPDSettings.challenges() > 0 ? Icons.CHALLENGE_ON : Icons.CHALLENGE_OFF));
 				add(challengeButton);
 				buttons.add(challengeButton);
-			}
+
 
 			for (int i = 1; i < buttons.size(); i++){
 				ColorBlock spc = new ColorBlock(1, 1, 0xFF000000);
